@@ -215,22 +215,5 @@ class DatabaseDetector extends AbstractILIASDatabaseDetector
         }
     }
 
-        /**
-     * @inheritDoc
-     */
-    public function primaryExistsByFields(string $table_name, array $fields): bool
-    {
-        $constraints = $this->manager->listTableConstraints($table_name);
-
-        if (in_array('primary', $constraints)) {
-            $definitions = $this->reverse->getTableConstraintDefinition($table_name, 'primary');
-            $primary_fields = array_keys($definitions['fields']);
-            sort($primary_fields);
-            sort($fields);
-
-            return $primary_fields === $fields;
-        }
-
-        return false;
-    }
+     
 }
