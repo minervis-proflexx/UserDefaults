@@ -214,4 +214,6 @@ class DatabaseDetector extends AbstractILIASDatabaseDetector
             return $primary_key_value;
         }
     }
+
+     
 }

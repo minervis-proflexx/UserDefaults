@@ -40,6 +40,14 @@ abstract class AbstractILIASDatabaseDetector implements DatabaseInterface
     }
 
 
+     /**
+     * @inheritdoc
+     */
+    public function primaryExistsByFields(string $table_name, array $fields) : bool
+    {
+        return $this->db->primaryExistsByFields($table_name, $fields);
+    }
+
     /**
      * @inheritDoc
      */
